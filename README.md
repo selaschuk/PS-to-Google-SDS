@@ -1,4 +1,4 @@
-# PS-to-Google-SDS
+# PS to Google SDS
 Script for exporting PowerSchool data for use with Google School Directory Sync
 
 google-export.bat is a simple bat file designed to be run as a scheduled task on the PowerSchool Database server to execute the google-export.sql query
