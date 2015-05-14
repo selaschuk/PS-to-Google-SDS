@@ -9,4 +9,3 @@ google-export.bat is a simple bat file designed to be run as a scheduled task on
 * If grade level is 0, substitues K
 * If grade level is less than 0, substitues ECS (you may call pre-K something else, adjust as necessary)
 * Ignores Students/Staff that don't have Student_Web_ID/TeacherLoginID set in powerschool
-* As we're just using this to create groups, it currently doesn't check the AB specific fields to see which name is preferred (legal or AKA), plus my understanding is that those fields may be changing soon.
