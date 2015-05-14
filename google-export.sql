@@ -34,8 +34,14 @@ WHEN Schools.Alternate_School_Number = '0' THEN TO_CHAR(Schools.School_Number)
 ELSE TO_CHAR(Schools.Alternate_School_Number)
 END||','||
 Students.ID||','||
-Students.First_Name||','||
-Students.Last_Name||','||
+CASE
+WHEN ps_customfields.getstudentscf(Students.id, 'AB_PreferredNameInd') = 'Alias' THEN ps_customfields.getstudentscf(Students.id, 'AB_AKA_Given_Names')
+ELSE Students.First_Name
+END||','||
+CASE
+WHEN ps_customfields.getstudentscf(Students.id, 'AB_PreferredNameInd') = 'Alias' THEN ps_customfields.getstudentscf(Students.id, 'AB_AKA_Surname')
+ELSE Students.Last_Name
+END||','||
 CASE
 WHEN Students.Grade_Level = '0' THEN 'K'
 WHEN Students.Grade_Level < '0' THEN 'ECS'
